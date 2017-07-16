@@ -1,0 +1,274 @@
+{
+	"variables": [],
+	"info": {
+		"name": "weather",
+		"_postman_id": "9f47f5e2-7e0f-5587-6873-529f4adf076d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cities within 10km lat=49.48, lng=8.46",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"",
+							"var body = JSON.parse(responseBody);",
+							"tests[\"1st city ID is 997151\"] = body[0].id === 2873891;",
+							"tests[\"2nd city ID is 2875376\"] = body[1].id === 2875376;",
+							"tests[\"3rd city ID is 2924380\"] = body[2].id === 2924380;",
+							"tests[\"4th city ID is 3220722\"] = body[3].id === 3220722;",
+							"tests[\"5th city ID is 2864388\"] = body[4].id === 2864388;",
+							"tests[\"6th city ID is 6555232\"] = body[5].id === 6555232;",
+							"tests[\"7th city ID is 2956891\"] = body[6].id === 2956891;",
+							"tests[\"8th city ID is 6555251\"] = body[7].id === 6555251;",
+							"tests[\"9th city ID is 2864869\"] = body[8].id === 2864869;",
+							"tests[\"10th city ID is 2872828\"] = body[9].id === 2872828;",
+							"tests[\"11th city ID is 2834072\"] = body[10].id === 2834072;",
+							"tests[\"12th city ID is 2896468\"] = body[11].id === 2896468;",
+							"tests[\"13th city ID is 6555665\"] = body[12].id === 6555665;",
+							"tests[\"14th city ID is 2877647\"] = body[13].id === 2877647;",
+							"tests[\"15th city ID is 6555248\"] = body[14].id === 6555248;",
+							"tests[\"16th city ID is 2933349\"] = body[15].id === 2933349;",
+							"tests[\"17th city ID is 6555250\"] = body[16].id === 6555250;",
+							"tests[\"18th city ID is 2867310\"] = body[17].id === 2867310;",
+							"tests[\"19th city ID is 6555254\"] = body[18].id === 6555254;",
+							"tests[\"20th city ID is 2814795\"] = body[19].id === 2814795;",
+							"tests[\"21th city ID is 2843521\"] = body[20].id === 2843521;",
+							"tests[\"22th city ID is 2925550\"] = body[21].id === 2925550;",
+							"",
+							"tests[\"1st city name is Mannheim\"] = body[0].name === \"Mannheim\";",
+							"tests[\"2nd city name is Ludwigshafen am Rhein\"] = body[1].name === \"Ludwigshafen am Rhein\";",
+							"tests[\"3rd city name is Friesenheim\"] = body[2].name === \"Friesenheim\";",
+							"tests[\"4th city name is Stadtkreis Mannheim\"] = body[3].name === \"Stadtkreis Mannheim\";",
+							"tests[\"5th city name is Neuostheim\"] = body[4].name === \"Neuostheim\";",
+							"tests[\"6th city name is Altrip\"] = body[5].name === \"Altrip\";",
+							"tests[\"7th city name is Altrip\"] = body[6].name === \"Altrip\";",
+							"tests[\"8th city name is Neuhofen\"] = body[7].name === \"Neuhofen\";",
+							"tests[\"9th city name is Neuhofen\"] = body[8].name === \"Neuhofen\";",
+							"tests[\"10th city name is Maudach\"] = body[9].name === \"Maudach\";",
+							"tests[\"11th city name is Seckenheim\"] = body[10].name === \"Seckenheim\";",
+							"tests[\"12th city name is Ilvesheim\"] = body[11].name === \"Ilvesheim\";",
+							"tests[\"13th city name is Ilvesheim\"] = body[12].name === \"Ilvesheim\";",
+							"tests[\"14th city name is Limburgerhof\"] = body[13].name === \"Limburgerhof\";",
+							"tests[\"15th city name is Limburgerhof\"] = body[14].name === \"Limburgerhof\";",
+							"tests[\"16th city name is Edigheim\"] = body[15].name === \"Edigheim\";",
+							"tests[\"17th city name is Mutterstadt\"] = body[16].name === \"Mutterstadt\";",
+							"tests[\"18th city name is Mutterstadt\"] = body[17].name === \"Mutterstadt\";",
+							"tests[\"19th city name is Waldsee\"] = body[18].name === \"Waldsee\";",
+							"tests[\"20th city name is Waldsee\"] = body[19].name === \"Waldsee\";",
+							"tests[\"21th city name is Ruchheim\"] = body[20].name === \"Ruchheim\";",
+							"tests[\"22th city name is Frankenthal\"] = body[21].name === \"Frankenthal\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/cities?lat=49.48&lng=8.46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cities"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "49.48",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lng",
+							"value": "8.46",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Return all cities within a radius of 10km from latitude 49.48 and longitude 8.46 (the city is Mannheim)."
+			},
+			"response": []
+		},
+		{
+			"name": "Cities within 10km la=49.48, ln=8.46 (incorrect params)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var body = JSON.parse(responseBody);",
+							"tests[\"Error code is BadRequest\"] = body.code === \"BadRequest\";",
+							"tests[\"Error message is \\\"lat/lng required\\\"\"] = body.message === \"lat/lng required\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/cities?lt=49.48&lg=8.46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cities"
+					],
+					"query": [
+						{
+							"key": "lt",
+							"value": "49.48",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lg",
+							"value": "8.46",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Bad request, tries to return all cities within a radius of 10km from latitude 49.48 and longitude 8.46 (the city is Mannheim), but has incorrect parameters la and ln."
+			},
+			"response": []
+		},
+		{
+			"name": "City details for id 2907911",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"var body = JSON.parse(responseBody);",
+							"tests[\"ID is 2907911\"] = body.id === 2907911;",
+							"tests[\"Name is Heidelberg\"] = body.name === \"Heidelberg\";",
+							"tests[\"Latitude is rounded 49.407681\"] = body.lat === 49.41;",
+							"tests[\"Longitude is rounded 8.690790\"] = body.lng === 8.69;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/cities/2907911",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Return details about the city with id 2907911 (Heidelberg)"
+			},
+			"response": []
+		},
+		{
+			"name": "City details for id 0 (incorrect id)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;\r",
+							"var body = JSON.parse(responseBody);\r",
+							"tests[\"Error code is Not Found\"] = body.code === \"NotFound\";\r",
+							"tests[\"Error message is \\\"not found\\\"\"] = body.message === \"not found\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/cities/0",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Error. Tries to return details about city with id 0 that does not exist."
+			},
+			"response": []
+		},
+		{
+			"name": "City weather for id 2875376",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"var body = JSON.parse(responseBody);",
+							"tests[\"Type is present\"] = body.type !== null;",
+							"tests[\"Type description is present\"] = body.type_description !== null;",
+							"tests[\"Sunrise is present\"] = body.sunrise !== null;",
+							"tests[\"Sunset is present\"] = body.sunset !== null;",
+							"tests[\"Temperature is present\"] = body.temp !== null;",
+							"tests[\"Min temperature is present\"] = body.temp_min !== null;",
+							"tests[\"Max temperature is present\"] = body.temp_max !== null;",
+							"tests[\"Pressure is present\"] = body.pressure !== null;",
+							"tests[\"Humidity is present\"] = body.humidity !== null;",
+							"tests[\"Clouds percent is present\"] = body.clouds_percent !== null;",
+							"tests[\"Wind speed is present\"] = body.wind_speed !== null;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/cities/2875376/weather",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Return weather details for city with id 2875376 (Mannheim)"
+			},
+			"response": []
+		},
+		{
+			"name": "City weather for id 0 (incorrect id)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;\r",
+							"var body = JSON.parse(responseBody);\r",
+							"tests[\"Error code is Not Found\"] = body.code === \"NotFound\";\r",
+							"tests[\"Error message is \\\"not found\\\"\"] = body.message === \"not found\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/cities/0/weather",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Error. Tries to return weather details about city with id 0 which does not exist."
+			},
+			"response": []
+		}
+	]
+}

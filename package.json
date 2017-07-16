@@ -1,0 +1,25 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "Fetch various weather details ",
+  "main": "index.js",
+  "dependencies": {
+    "http-errors": "^1.6.1",
+    "request": "^2.81.0",
+    "underscore-node": "^0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elenaeli/weather.git"
+  },
+  "author": "Elena Elenkova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elenaeli/weather/issues"
+  },
+  "homepage": "https://github.com/elenaeli/weather#readme"
+}
